@@ -1,8 +1,10 @@
 ---
 layout: post
-title:  Poem 2
-date:   2024-02-17 21:21:22 -0500
+title: Poem 2
+date: 2024-02-17 21:21:22 -0500
 categories: delete
+sitemap: false
+rss: false
 stars: 3
 ---
 
