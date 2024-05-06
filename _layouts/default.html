@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<meta name="description" content="Michael Kavchak">
+<meta name="keywords" content="Michael Kavchak, poems, stories, ideas">
+<meta name="author" content="Michael Kavchak">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Michael Kavchak">
+<meta property="og:description" content="Personal website of Michael Kavchak">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.michaelkavchak.com">
+<meta property="og:image" content="https://www.michaelkavchak.com/images/og-image.jpg">
+<meta property="og:image:alt" content="Michael Kavchak">
+<meta property="og:site_name" content="Michael Kavchak">
+<html lang="en">
 
-  {%- include head.html -%}
+{%- include head.html -%}
 
-  <body>
+<body>
 
-    {%- include header.html -%}
+  {%- include header.html -%}
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </main>
 
-    {%- include footer.html -%}
+  {%- include footer.html -%}
 
-  </body>
+</body>
 
 </html>
