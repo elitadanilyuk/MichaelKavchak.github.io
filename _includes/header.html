@@ -5,17 +5,18 @@
     {%- assign default_paths = sorted_pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-    <br>
+
+    <h2>Poems</h2>
 
     {%- if page_paths -%}
-      <nav class="site-nav">
-        {%- assign sorted_pages = site.pages | sort: "weight" -%}
-        {%- for page in sorted_pages -%}
-          {%- if page.title -%}
-            <a class="page-link" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
-          {%- endif -%}
-        {%- endfor -%}
-      </nav>
+    <nav class="site-nav">
+      {%- assign sorted_pages = site.pages | sort: "weight" -%}
+      {%- for page in sorted_pages -%}
+      {%- if page.title -%}
+      <a class="page-link" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
+      {%- endif -%}
+      {%- endfor -%}
+    </nav>
     {%- endif -%}
   </div>
 </header>

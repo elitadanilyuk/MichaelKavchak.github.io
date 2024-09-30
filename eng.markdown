@@ -1,0 +1,24 @@
+---
+layout: default
+weight: 3
+title: English
+permalink: /eng/
+categories: eng
+---
+
+{%- assign sorted_posts = site.categories.eng | sort: 'number' | reverse -%}
+{%- for post in sorted_posts -%}
+{% if post.categories contains 'delete' %}
+{%- continue -%}
+{% endif %}
+
+  <div class="post-data">
+    {{ post.content }}
+    <h3 class="number-field">
+      {{ post.number }}-{{ post.edits }}
+    </h3>
+    <h3 class="type-field">
+      @@
+    </h3>
+  </div>
+{%- endfor -%}
