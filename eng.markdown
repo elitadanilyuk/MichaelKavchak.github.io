@@ -4,6 +4,7 @@ weight: 3
 title: English
 permalink: /eng/
 categories: eng
+published: false
 ---
 
 {%- assign sorted_posts = site.categories.eng | sort: 'number' | reverse -%}
