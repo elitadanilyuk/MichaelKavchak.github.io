@@ -22,7 +22,7 @@ title: Іван Зелот
 author: Michael Kavchak
 email: MKavchak@yahoo.com
 description: >- # this means to ignore newlines until "baseurl:"
-  A personal blog for poems
+  A personal blog for poems by Іван Зелот
 baseurl: '' # the subpath of your site, e.g. /blog
 url: 'https://michaelkavchak.com' # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
@@ -32,8 +32,6 @@ permalink: pretty
 # Build settings
 theme: minima
 plugins:
-  - jekyll-feed
-  - jekyll-sitemap
   - jekyll-seo-tag
 
 # Fix poem wrapping
