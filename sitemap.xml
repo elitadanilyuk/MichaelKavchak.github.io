@@ -2,13 +2,36 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1">
-{% for post in site.posts %}
-  {% unless post.categories contains "eng" or post.categories contains "delete" %}
-    <url>
-      <loc>{{ post.url | absolute_url }}</loc>
-      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-    </url>
-  {% endunless %}
-{% endfor %}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Loop through all pages -->
+  {% for page in site.pages %}
+    {% if page.sitemap != false %}
+      <url>
+        <loc>{{ site.url }}{{ page.url | escape }}</loc>
+        {% if page.modified %}
+          <lastmod>{{ page.modified | date_to_xmlschema }}</lastmod>
+        {% else %}
+          <lastmod>{{ "now" | date_to_xmlschema }}</lastmod>
+        {% endif %}
+        <changefreq>monthly</changefreq>
+      </url>
+    {% endif %}
+  {% endfor %}
+
+  <!-- Loop through all posts, excluding those with 'eng' or 'delete' categories -->
+  {% for post in site.posts %}
+    {% unless post.categories contains "eng" or post.categories contains "delete" %}
+      <url>
+        <loc>{{ site.url }}{{ post.url | escape }}</loc>
+        {% if post.date %}
+          <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+        {% else %}
+          <lastmod>{{ "now" | date_to_xmlschema }}</lastmod>
+        {% endif %}
+        <changefreq>weekly</changefreq>
+      </url>
+    {% endunless %}
+  {% endfor %}
+
 </urlset>
