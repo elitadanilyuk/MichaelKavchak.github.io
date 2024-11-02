@@ -12,7 +12,8 @@ layout: null
         {% if page.modified %}
           <lastmod>{{ page.modified | date_to_xmlschema }}</lastmod>
         {% else %}
-          <lastmod>{{ "now" | date_to_xmlschema }}</lastmod>
+          <!-- <lastmod>{{ "now" | date_to_xmlschema }}</lastmod> -->
+          <lastmod>{{ date_to_xmlschema }}</lastmod>
         {% endif %}
         <changefreq>monthly</changefreq>
       </url>
@@ -27,7 +28,8 @@ layout: null
         {% if post.date %}
           <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
         {% else %}
-          <lastmod>{{ "now" | date_to_xmlschema }}</lastmod>
+          <!-- <lastmod>{{ "now" | date_to_xmlschema }}</lastmod> -->
+          <lastmod>{{ date_to_xmlschema }}</lastmod>
         {% endif %}
         <changefreq>weekly</changefreq>
       </url>
