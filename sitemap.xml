@@ -1,39 +1,30 @@
 ---
 layout: null
 ---
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Loop through all pages -->
   {% for page in site.pages %}
-    {% if page.sitemap != false %}
-      <url>
-        <loc>{{ site.url }}{{ page.url | escape }}</loc>
-        {% if page.modified %}
-          <lastmod>{{ page.modified | date_to_xmlschema }}</lastmod>
-        {% else %}
-          <!-- <lastmod>{{ "now" | date_to_xmlschema }}</lastmod> -->
-          <lastmod>{{ date_to_xmlschema }}</lastmod>
-        {% endif %}
-        <changefreq>monthly</changefreq>
-      </url>
-    {% endif %}
+  {% unless page.sitemap.exclude == "yes" or page.url contains "assets" or page.categories contains "eng" or page.categories contains "delete" %}
+  <url>
+    <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>always</changefreq>
+    <priority>{% if page.sitemap.priority %}{{ page.sitemap.priority }}{% else %}0.8{% endif %}</priority>
+  </url>
+  {% endunless %}
   {% endfor %}
 
-  <!-- Loop through all posts, excluding those with 'eng' or 'delete' categories -->
   {% for post in site.posts %}
-    {% unless post.categories contains "eng" or post.categories contains "delete" %}
-      <url>
-        <loc>{{ site.url }}{{ post.url | escape }}</loc>
-        {% if post.date %}
-          <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-        {% else %}
-          <!-- <lastmod>{{ "now" | date_to_xmlschema }}</lastmod> -->
-          <lastmod>{{ date_to_xmlschema }}</lastmod>
-        {% endif %}
-        <changefreq>weekly</changefreq>
-      </url>
-    {% endunless %}
+  {% unless post.published == false or post.categories contains "eng" or post.categories contains "delete" %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    <changefreq>always</changefreq>
+    <priority>{% if post.sitemap.priority %}{{ post.sitemap.priority }}{% else %}0.5{% endif %}</priority>
+  </url>
+  {% endunless %}
   {% endfor %}
 
 </urlset>
