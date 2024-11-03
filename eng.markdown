@@ -16,7 +16,9 @@ published: false
   <div class="post-data">
     {{ post.content }}
     <h3 class="number-field">
-      {{ post.number }}-{{ post.edits }}
+      <a href="{{ post.url }}">
+        {{ post.number }}-{{ post.edits }}
+      </a>
     </h3>
     <h3 class="type-field">
       @@
