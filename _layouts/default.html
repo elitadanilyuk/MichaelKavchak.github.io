@@ -11,7 +11,8 @@
 <meta property="og:image:alt" content="Michael Kavchak">
 <meta property="og:site_name" content="Michael Kavchak">
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS Feed" href="{{ site.url }}/feed.xml" />
-<html lang="en">
+<html
+  lang="{% if page.path contains 'ukr' %}uk{% elsif page.path contains 'latin_25' %}latin{% elsif page.path contains 'eng' %}en{% else %}uk{% endif %}">
 
 {%- include head.html -%}
 
