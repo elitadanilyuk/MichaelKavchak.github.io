@@ -6,7 +6,7 @@ layout: null
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   {% for page in site.pages %}
-  {% unless page.sitemap.exclude == "yes" or page.url contains "assets" or page.categories contains "eng" or page.categories contains "delete" %}
+  {% unless page.sitemap.exclude == "yes" or page.url contains "assets" or page.categories contains "delete" %}
   <url>
     <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
@@ -17,7 +17,7 @@ layout: null
   {% endfor %}
 
   {% for post in site.posts %}
-  {% unless post.published == false or post.categories contains "eng" or post.categories contains "delete" %}
+  {% unless post.published == false or post.categories contains "delete" %}
   <url>
     <loc>{{ site.url }}{{ post.url }}</loc>
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
