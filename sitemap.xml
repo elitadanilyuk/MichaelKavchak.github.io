@@ -20,7 +20,7 @@ layout: null
   {% unless post.published == false or post.categories contains "delete" %}
   <url>
     <loc>{{ site.url }}{{ post.url }}</loc>
-    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    <lastmod>{{ site.time | post.date | date_to_xmlschema }}</lastmod>
     <changefreq>always</changefreq>
     <priority>{% if post.sitemap.priority %}{{ post.sitemap.priority }}{% else %}0.5{% endif %}</priority>
   </url>
