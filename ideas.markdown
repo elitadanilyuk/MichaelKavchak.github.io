@@ -1,8 +1,8 @@
 ---
 layout: default
 weight: 1
-title: Stories
-permalink: /stories/
+title: Ideas
+permalink: /ideas/
 categories: eng
 ---
 
