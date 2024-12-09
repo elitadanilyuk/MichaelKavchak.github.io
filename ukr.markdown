@@ -2,7 +2,7 @@
 layout: default
 weight: 1
 title: Українською
-permalink: /poems-ukr/
+permalink: /poems-ukrainian/
 categories: ukr
 ---
 

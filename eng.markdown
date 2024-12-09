@@ -2,7 +2,7 @@
 layout: default
 weight: 3
 title: English
-permalink: /poems-eng/
+permalink: /poems-english/
 categories: eng
 # published: false
 ---
