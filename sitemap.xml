@@ -1,26 +1,34 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   {% for page in site.pages %}
-  {% unless page.sitemap.exclude == "yes" or page.url contains "assets" or page.categories contains "delete" %}
-  <url>
-    <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-    <changefreq>always</changefreq>
-    <priority>{% if page.sitemap.priority %}{{ page.sitemap.priority }}{% else %}0.8{% endif %}</priority>
-  </url>
-  {% endunless %}
+    {% if page.sitemap != false %}
+      <url>
+        <loc>{{ site.url }}{{ page.url | escape }}</loc>
+        {% if page.modified %}
+          <lastmod>{{ page.modified | date: "%Y-%m-%dT%H:%M:%S%:z" }}</lastmod>
+        {% else %}
+          <lastmod>{{ "now" | date: "%Y-%m-%dT%H:%M:%S%:z" }}</lastmod>
+        {% endif %}
+        <changefreq>monthly</changefreq>
+      </url>
+    {% endif %}
   {% endfor %}
 
   {% for post in site.posts %}
-  {% unless post.published == false or post.categories contains "delete" %}
-  <url>
-    <loc>{{ site.url }}{{ post.url }}</loc>
-    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-    <changefreq>always</changefreq>
-    <priority>{% if post.sitemap.priority %}{{ post.sitemap.priority }}{% else %}0.5{% endif %}</priority>
-  </url>
-  {% endunless %}
+    {% unless post.categories contains "delete" %}
+      <url>
+        <loc>{{ site.url }}{{ post.url | escape }}</loc>
+        {% if post.date %}
+          <lastmod>{{ post.date | date: "%Y-%m-%dT%H:%M:%S%:z" }}</lastmod>
+        {% else %}
+          <lastmod>{{ "now" | date: "%Y-%m-%dT%H:%M:%S%:z" }}</lastmod>
+        {% endif %}
+        <changefreq>weekly</changefreq>
+      </url>
+    {% endunless %}
   {% endfor %}
 
 </urlset>
