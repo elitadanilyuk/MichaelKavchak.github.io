@@ -2,6 +2,7 @@
 layout: default
 weight: 1
 title: English
+heading: Poems
 permalink: /poems-english/
 categories: eng
 # published: false

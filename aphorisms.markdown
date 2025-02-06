@@ -2,6 +2,7 @@
 layout: default
 weight: 4
 title: Афоризми
+heading: Aphorisms
 permalink: /aphorisms/
 categories: aphorisms
 # published: false
