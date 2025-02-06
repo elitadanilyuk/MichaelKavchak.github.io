@@ -1,8 +1,9 @@
 ---
 layout: default
+heading: Poems
 ---
 
-{%- assign sorted_posts = site.categories.ukr | sort: 'number' | reverse -%}
+{%- assign sorted_posts = site.categories.eng | sort: 'number' | reverse -%}
 {%- for post in sorted_posts -%}
 {% if post.categories contains 'delete' %}
 {%- continue -%}
