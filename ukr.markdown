@@ -1,6 +1,6 @@
 ---
 layout: default
-weight: 1
+weight: 2
 title: Українською
 permalink: /poems-ukrainian/
 categories: ukr

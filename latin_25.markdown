@@ -1,6 +1,6 @@
 ---
 layout: default
-weight: 2
+weight: 3
 title: Латинкою-25
 permalink: /poems-latin-25/
 categories: latin_25
