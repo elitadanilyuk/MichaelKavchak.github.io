@@ -1,12 +1,13 @@
 ---
 layout: default
-weight: 1
-title: Stories
-permalink: /stories/
-categories: eng
+weight: 4
+title: Афоризми
+permalink: /aphorisms/
+categories: aphorisms
+# published: false
 ---
 
-{%- assign sorted_posts = site.categories.eng | sort: 'number' | reverse -%}
+{%- assign sorted_posts = site.categories.aphorisms | sort: 'number' | reverse -%}
 {%- for post in sorted_posts -%}
 {% if post.categories contains 'delete' %}
 {%- continue -%}

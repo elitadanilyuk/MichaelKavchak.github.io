@@ -10,8 +10,8 @@ To create a new poem, create a file in the `poems/_posts` folder with the follow
 ```markdown
 ---
 layout: post
-title:  Poem 1
-date:   2024-02-17 21:21:22 -0500
+title: Poem 1
+date: 2024-02-17 21:21:22 -0500
 categories: poems
 stars: 3
 ---
@@ -27,38 +27,9 @@ Last Line
 
 ---
 
-## Ideas
+## Aphorisms
 
-To create a new idea, create a file in the `ideas/_posts` folder with the following format:
-
-**File Name:**  
-`YYYY-MM-DD-custom-name.md`
-
-**File Content:**
-
-```markdown
----
-layout: post
-title:  Idea 1
-date:   2024-02-17 21:21:22 -0500
-categories: ideas
-stars: 3
----
-
-First Paragraph\
-Second Line\
-Third Line
-
-Second Paragraph\
-Fifth Line\
-Last Line
-```
-
----
-
-## Stories
-
-To create a new story, create a file in the `stories/_posts` folder with the following format:
+To create a new aphorism, create a file in the `aphorisms/_posts` folder with the following format:
 
 **File Name:**  
 `YYYY-MM-DD-custom-name.md`
@@ -68,9 +39,9 @@ To create a new story, create a file in the `stories/_posts` folder with the fol
 ```markdown
 ---
 layout: post
-title:  Story 1
-date:   2024-02-17 21:21:22 -0500
-categories: stories
+title: Aphorism 1
+date: 2024-02-17 21:21:22 -0500
+categories: aphorisms
 stars: 3
 ---
 
